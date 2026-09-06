@@ -1,11 +1,7 @@
 <h1 align="center">Sapram Khajesh Narayana</h1>
 
 <p align="center">
-  <b>Artificial Intelligence · Machine Learning Research · Information Retrieval</b>
-</p>
-
-<p align="center">
-  Building intelligent systems. Testing what they claim. Measuring what actually works.
+  <b>I don't chase hype. I chase what survives evaluation.</b>
 </p>
 
 <p align="center">
@@ -18,236 +14,53 @@
 
 ## About
 
-Computer Science and Engineering undergraduate specializing in **Artificial Intelligence** at Manipal Institute of Technology Bengaluru.
+I'm a CS undergrad specializing in AI at Manipal. But titles don't win arguments — results do.
 
-My work is concentrated around machine learning systems where the difficult part is not simply training a model.
+Anyone can train a model. That's the easy part. The hard part is standing in front of someone who doesn't believe you and proving the model deserves to work. That's the part I actually care about.
 
-It is proving that the model deserves to work.
-
-I work across:
-
-* Machine Learning
-* Natural Language Processing
-* Representation Learning
-* Information Retrieval
-* Entity Resolution
-* LLM Reasoning
-* AI Evaluation
-* Decision Systems
-
-I am interested in systems that have to perform when the data is imperfect, the distinctions are subtle, and the answer cannot be taken on faith.
+I work in machine learning, representation learning, information retrieval, entity resolution, and LLM reasoning — wherever the data is messy, the distinctions are subtle, and "trust me" isn't an acceptable answer.
 
 ---
 
-## Research
+## The Win
 
 ### Domain-Specific Text Embedding Models for Entity Resolution
+**Khajesh Sapram, Srivardhani Raju, Kishore Konda — arXiv, 2026**
 
-**Khajesh Sapram, Srivardhani Raju, Kishore Konda — 2026**
+[Paper](https://arxiv.org/abs/2608.16161) · [Code](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
 
-[Read the paper on arXiv](https://arxiv.org/abs/2608.16161)
+Here's the problem with general-purpose embeddings: they're good at "similar." Entity resolution doesn't care about similar. Two records can look almost identical and be two different people. Two records can look nothing alike and be the same one. Similar loses. Correct wins.
 
-[View the implementation](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
+So I fixed it.
 
-General-purpose embedding models are good at semantic similarity.
+- Fine-tuned `all-MiniLM-L6-v2` and `BAAI/bge-base-en-v1.5`
+- Built 8,130 anchor-positive-negative triplets by hand, with entity-level train/validation isolation — no leakage, no shortcuts, no excuses
+- Constructed hard negatives that actually earn the name
 
-Entity resolution demands something stricter.
+**Result:** at a strict 0.30 cosine-similarity margin, BGE Base EN v1.5 went from 15.25% to 92.70%.
 
-Two records can look nearly identical and still represent different entities. Two records can look substantially different and still refer to the same one.
-
-That distinction was the problem.
-
-The work involved:
-
-* Fine-tuning `all-MiniLM-L6-v2`
-* Fine-tuning `BAAI/bge-base-en-v1.5`
-* Building **8,130 anchor-positive-negative triplets**
-* Designing identity-preserving positive variations
-* Constructing difficult hard negatives
-* Enforcing entity-level train-validation isolation
-* Building preprocessing, training and evaluation pipelines
-* Benchmarking pretrained and domain-adapted representations
-* Measuring embedding separation through cosine-similarity margins
-
-At a strict **0.30 margin**, domain adaptation increased BGE Base EN v1.5 performance from **15.25% to 92.70%**.
-
-The objective was not to produce embeddings that merely looked good.
-
-It was to build an embedding space that made the right distinctions.
+That's not an improvement. That's a different model.
 
 ---
 
-## Current Work
+## In Progress
 
-### Chain-of-Thought Faithfulness
+I don't announce what I haven't built yet. These two are open — status noted, no theater.
 
-Large language models can explain their reasoning.
+**Chain-of-Thought Faithfulness** — A model can tell you why it got an answer. That doesn't mean the explanation is the reason. I'm running black-box behavioral interventions to find out how much of a model's stated reasoning is real and how much is a good story. *Early-stage. No public repo yet.*
 
-That does not automatically mean the explanation caused the answer.
-
-I am currently investigating the faithfulness of visible reasoning traces through **black-box behavioral interventions**.
-
-The central question:
-
-> **When a model tells us why it reached an answer, how much of that explanation should we believe?**
-
-Current areas of investigation include:
-
-* Chain-of-Thought faithfulness
-* Behavioral interventions
-* Counterfactual evaluation
-* Post-hoc rationalization
-* Reasoning-model evaluation
-* Prompt-induced behavioral changes
-* Reliability of visible reasoning traces
-
-The distinction matters.
-
-A persuasive explanation is not necessarily a faithful one.
+**DeltaVision** — F1 race strategy under uncertainty. Not "what would've worked" with hindsight — what was the correct call with only the information available at that moment. Tyres, gaps, Safety Car windows, weather, pit-loss math. *Design phase. Nothing shipped yet — I'll link it when there's something worth linking.*
 
 ---
 
-### DeltaVision
+## Stack
 
-**AI-Driven Formula One Race Strategy Optimization Under Uncertainty**
+`Python` · `PyTorch` · `Hugging Face Transformers` · `Sentence Transformers` · `Git`
 
-Race strategy is not an optimization problem with perfect information.
-
-It is a decision problem under pressure, incomplete information and changing state.
-
-DeltaVision reconstructs Formula One race conditions and evaluates the strongest strategic action available from the information that existed at that moment.
-
-The system considers:
-
-* Driver position
-* Tyre compound
-* Tyre age
-* Recent pace
-* Gaps ahead and behind
-* Pit-loss estimates
-* Safety Car and VSC periods
-* Weather
-* Track conditions
-* Race-state transitions
-
-The question behind the system:
-
-> **Given everything known at time \(t\), what was the strongest decision available?**
-
-Not what became obvious afterwards.
-
-What was defensible then.
-
----
-
-## Selected Work
-
-### Domain-Specific Text Embedding Models for Information Retrieval
-
-**Python · PyTorch · Hugging Face · Sentence Transformers**
-
-A reproducible research pipeline covering:
-
-`Data Generation → Model Training → Validation → Retrieval Evaluation → Benchmarking`
-
-[View Repository](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
-
-Key areas:
-
-* Sentence-embedding fine-tuning
-* Metric learning
-* Triplet learning
-* Entity resolution
-* Dense retrieval
-* Hard-negative construction
-* Semantic similarity
-* Model benchmarking
-* Data-leakage prevention
-
----
-
-## Technical Stack
-
-### Core
-
-`Python` · `Git` · `GitHub`
-
-### Machine Learning
-
-`PyTorch` · `Hugging Face Transformers` · `Sentence Transformers`
-
-### ML & NLP
-
-`Deep Learning`
-`Transformer Fine-Tuning`
-`Text Embeddings`
-`Sentence Embeddings`
-`Representation Learning`
-`Metric Learning`
-`Triplet Learning`
-`Synthetic Data Generation`
-
-### Information Retrieval
-
-`Dense Retrieval`
-`Semantic Search`
-`Entity Resolution`
-`Record Linkage`
-`Duplicate Detection`
-`Hard-Negative Construction`
-
-### Research & Evaluation
-
-`Experimental Design`
-`Model Benchmarking`
-`Cosine-Similarity Evaluation`
-`Entity-Level Validation`
-`Data Preprocessing`
-`Reproducible Research`
-
----
-
-## Research Interests
-
-**Representation Learning**
-Building embedding spaces where meaningful distinctions survive similarity.
-
-**Information Retrieval**
-Finding the right result, not merely a plausible one.
-
-**Reasoning Models**
-Understanding the difference between an answer and the reasoning presented for it.
-
-**AI Evaluation**
-Designing experiments capable of exposing model failure rather than concealing it behind aggregate performance.
-
-**Decision Systems**
-Making the strongest decision possible from the state of the world that actually exists.
-
-**Machine Learning Systems**
-Turning experiments into pipelines that can be tested, reproduced and challenged.
-
----
-
-## Publication
-
-### Domain-Specific Text Embedding Models for Entity Resolution
-
-Khajesh Sapram, Srivardhani Raju, Kishore Konda
-**arXiv, August 2026**
-
-[Paper](https://arxiv.org/abs/2608.16161) · [Source Code](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
-
----
-
-## Find Me
-
-[GitHub](https://github.com/khajeshnarayana)
-[arXiv](https://arxiv.org/abs/2608.16161)
-[Email](mailto:khajeshn@gmail.com)
+Metric learning, triplet learning, dense retrieval, hard-negative mining, reproducible pipelines. I don't collect tools. I use the ones that get the job done.
 
 ---
 
 <p align="center">
-  <b>Build what works. Measure what matters.</b>
+  <b>I don't have hobbies. I have a track record.</b>
 </p>
