@@ -1,36 +1,41 @@
 <h1 align="center">Sapram Khajesh Narayana</h1>
 
 <p align="center">
-  <b>Computer Science & AI · Machine Learning Research · Information Retrieval</b>
+  <b>Artificial Intelligence · Machine Learning Research · Information Retrieval</b>
 </p>
 
 <p align="center">
-  I build systems that learn better representations, retrieve the right information, and help us understand how intelligent models make decisions.
+  Building intelligent systems. Testing what they claim. Measuring what actually works.
 </p>
 
 <p align="center">
+  <a href="https://github.com/khajeshnarayana">GitHub</a> •
   <a href="https://arxiv.org/abs/2608.16161">Research</a> •
-  <a href="https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval">Projects</a> •
   <a href="mailto:khajeshn@gmail.com">Contact</a>
 </p>
 
 ---
 
-## About Me
+## About
 
-I am a Computer Science and Engineering undergraduate specializing in Artificial Intelligence at Manipal Institute of Technology Bengaluru.
+Computer Science and Engineering undergraduate specializing in **Artificial Intelligence** at Manipal Institute of Technology Bengaluru.
 
-My work sits primarily at the intersection of:
+My work is concentrated around machine learning systems where the difficult part is not simply training a model.
+
+It is proving that the model deserves to work.
+
+I work across:
 
 * Machine Learning
 * Natural Language Processing
 * Representation Learning
 * Information Retrieval
 * Entity Resolution
-* LLM Reasoning & Faithfulness
-* AI-driven decision systems
+* LLM Reasoning
+* AI Evaluation
+* Decision Systems
 
-I am particularly interested in problems where simply making a model larger is not enough — problems that require better representations, stronger evaluation, careful experimentation, and systems that remain reliable under uncertainty.
+I am interested in systems that have to perform when the data is imperfect, the distinctions are subtle, and the answer cannot be taken on faith.
 
 ---
 
@@ -38,48 +43,67 @@ I am particularly interested in problems where simply making a model larger is n
 
 ### Domain-Specific Text Embedding Models for Entity Resolution
 
-<a href="https://arxiv.org/abs/2608.16161">
-  <img src="https://img.shields.io/badge/arXiv-2608.16161-b31b1b?style=flat-square&logo=arxiv" />
-</a>
-
 **Khajesh Sapram, Srivardhani Raju, Kishore Konda — 2026**
 
-Research into adapting general-purpose sentence embedding models for identity-sensitive entity retrieval.
+[Read the paper on arXiv](https://arxiv.org/abs/2608.16161)
 
-The work explores whether triplet-based domain adaptation can reshape embedding spaces so that models distinguish genuine entity matches from highly similar non-matching records.
+[View the implementation](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
 
-Key work included:
+General-purpose embedding models are good at semantic similarity.
 
-* Fine-tuning `all-MiniLM-L6-v2` and `BAAI/bge-base-en-v1.5`
-* Building a synthetic corpus of **8,130 anchor-positive-negative triplets**
-* Constructing identity-preserving variations and challenging hard negatives
-* Designing entity-level train/validation isolation to prevent leakage
-* Developing cosine-similarity and margin-based evaluation frameworks
-* Building reproducible preprocessing, training, validation, and benchmarking pipelines
+Entity resolution demands something stricter.
 
-At a strict **0.30 similarity margin**, domain adaptation improved BGE Base EN v1.5 performance from **15.25% to 92.70%**.
+Two records can look nearly identical and still represent different entities. Two records can look substantially different and still refer to the same one.
 
-**Paper:** [Domain-Specific Text Embedding Models for Entity Resolution](https://arxiv.org/abs/2608.16161)
+That distinction was the problem.
 
-**Code:** [Domain-Specific Text Embedding Models for Information Retrieval](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
+The work involved:
+
+* Fine-tuning `all-MiniLM-L6-v2`
+* Fine-tuning `BAAI/bge-base-en-v1.5`
+* Building **8,130 anchor-positive-negative triplets**
+* Designing identity-preserving positive variations
+* Constructing difficult hard negatives
+* Enforcing entity-level train-validation isolation
+* Building preprocessing, training and evaluation pipelines
+* Benchmarking pretrained and domain-adapted representations
+* Measuring embedding separation through cosine-similarity margins
+
+At a strict **0.30 margin**, domain adaptation increased BGE Base EN v1.5 performance from **15.25% to 92.70%**.
+
+The objective was not to produce embeddings that merely looked good.
+
+It was to build an embedding space that made the right distinctions.
 
 ---
 
-## What I'm Working On
+## Current Work
 
 ### Chain-of-Thought Faithfulness
 
-Exploring whether the reasoning explanations produced by large language models actually reflect the process responsible for their answers.
+Large language models can explain their reasoning.
 
-Current direction:
+That does not automatically mean the explanation caused the answer.
 
-> **Evaluating Chain-of-Thought Faithfulness Through Black-Box Behavioral Interventions**
+I am currently investigating the faithfulness of visible reasoning traces through **black-box behavioral interventions**.
 
-The broader question is simple:
+The central question:
 
-**When a model explains its reasoning, how much should we trust that explanation?**
+> **When a model tells us why it reached an answer, how much of that explanation should we believe?**
 
-Areas of interest include behavioral interventions, counterfactual testing, reasoning-model evaluation, post-hoc rationalization, and the reliability of visible reasoning traces.
+Current areas of investigation include:
+
+* Chain-of-Thought faithfulness
+* Behavioral interventions
+* Counterfactual evaluation
+* Post-hoc rationalization
+* Reasoning-model evaluation
+* Prompt-induced behavioral changes
+* Reliability of visible reasoning traces
+
+The distinction matters.
+
+A persuasive explanation is not necessarily a faithful one.
 
 ---
 
@@ -87,160 +111,143 @@ Areas of interest include behavioral interventions, counterfactual testing, reas
 
 **AI-Driven Formula One Race Strategy Optimization Under Uncertainty**
 
-A decision-support system for evaluating Formula One race strategy from evolving race state.
+Race strategy is not an optimization problem with perfect information.
 
-The system models information such as:
+It is a decision problem under pressure, incomplete information and changing state.
 
-* Tyre compound and tyre age
+DeltaVision reconstructs Formula One race conditions and evaluates the strongest strategic action available from the information that existed at that moment.
+
+The system considers:
+
 * Driver position
-* Gaps to surrounding cars
-* Recent race pace
+* Tyre compound
+* Tyre age
+* Recent pace
+* Gaps ahead and behind
 * Pit-loss estimates
-* Safety Car / VSC state
-* Weather and track conditions
+* Safety Car and VSC periods
+* Weather
+* Track conditions
+* Race-state transitions
 
-The central problem:
+The question behind the system:
 
-> Given the information available at time \(t\), what was the strongest strategic decision available?
+> **Given everything known at time \(t\), what was the strongest decision available?**
 
-The project combines race-state reconstruction, data engineering, uncertainty-aware reasoning, and strategy optimization.
+Not what became obvious afterwards.
+
+What was defensible then.
+
+---
+
+## Selected Work
+
+### Domain-Specific Text Embedding Models for Information Retrieval
+
+**Python · PyTorch · Hugging Face · Sentence Transformers**
+
+A reproducible research pipeline covering:
+
+`Data Generation → Model Training → Validation → Retrieval Evaluation → Benchmarking`
+
+[View Repository](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
+
+Key areas:
+
+* Sentence-embedding fine-tuning
+* Metric learning
+* Triplet learning
+* Entity resolution
+* Dense retrieval
+* Hard-negative construction
+* Semantic similarity
+* Model benchmarking
+* Data-leakage prevention
 
 ---
 
 ## Technical Stack
 
-### Languages & Tools
+### Core
 
-<p>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white" />
-  <img src="https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white" />
-</p>
+`Python` · `Git` · `GitHub`
 
 ### Machine Learning
 
-<p>
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=flat-square&logo=pytorch&logoColor=white" />
-  <img src="https://img.shields.io/badge/Hugging%20Face-FFD21E?style=flat-square&logo=huggingface&logoColor=black" />
-  <img src="https://img.shields.io/badge/Sentence%20Transformers-000000?style=flat-square" />
-</p>
+`PyTorch` · `Hugging Face Transformers` · `Sentence Transformers`
 
-```text
-Deep Learning
-Transformer Fine-Tuning
-Text & Sentence Embeddings
-Representation Learning
-Metric Learning
-Triplet Learning
-Synthetic Data Generation
-```
+### ML & NLP
+
+`Deep Learning`
+`Transformer Fine-Tuning`
+`Text Embeddings`
+`Sentence Embeddings`
+`Representation Learning`
+`Metric Learning`
+`Triplet Learning`
+`Synthetic Data Generation`
 
 ### Information Retrieval
 
-```text
-Dense Retrieval
-Semantic Search
-Entity Resolution
-Record Linkage
-Duplicate Detection
-Hard-Negative Construction
-```
+`Dense Retrieval`
+`Semantic Search`
+`Entity Resolution`
+`Record Linkage`
+`Duplicate Detection`
+`Hard-Negative Construction`
 
 ### Research & Evaluation
 
-```text
-Experimental Design
-Model Benchmarking
-Cosine-Similarity Evaluation
-Entity-Level Validation
-Data Preprocessing
-Reproducible Research
-```
+`Experimental Design`
+`Model Benchmarking`
+`Cosine-Similarity Evaluation`
+`Entity-Level Validation`
+`Data Preprocessing`
+`Reproducible Research`
 
 ---
 
-## How I Approach Problems
+## Research Interests
 
-I am interested in building systems from first principles rather than treating models as black-box components.
+**Representation Learning**
+Building embedding spaces where meaningful distinctions survive similarity.
 
-My usual workflow is:
+**Information Retrieval**
+Finding the right result, not merely a plausible one.
 
-```text
-Understand the system
-        ↓
-Define the state and constraints
-        ↓
-Construct the data
-        ↓
-Build the smallest working pipeline
-        ↓
-Measure failure
-        ↓
-Fix the representation / architecture / evaluation
-        ↓
-Repeat
-```
+**Reasoning Models**
+Understanding the difference between an answer and the reasoning presented for it.
 
-The objective is not merely to make a model produce an answer.
+**AI Evaluation**
+Designing experiments capable of exposing model failure rather than concealing it behind aggregate performance.
 
-It is to understand **why the system succeeds, where it fails, and how to make that behavior measurable and reproducible.**
+**Decision Systems**
+Making the strongest decision possible from the state of the world that actually exists.
+
+**Machine Learning Systems**
+Turning experiments into pipelines that can be tested, reproduced and challenged.
 
 ---
 
-## Current Research Interests
+## Publication
 
-```text
-Representation Learning     ███████████████████
-Information Retrieval       ███████████████████
-LLM Reasoning               ██████████████████
-AI Evaluation               █████████████████
-Decision Systems            ████████████████
-Machine Learning Systems    ████████████████
-```
+### Domain-Specific Text Embedding Models for Entity Resolution
 
-I am especially interested in:
+Khajesh Sapram, Srivardhani Raju, Kishore Konda
+**arXiv, August 2026**
 
-* Domain adaptation of embedding models
-* Retrieval and ranking systems
-* Hard-negative learning
-* Evaluation of reasoning models
-* Chain-of-Thought faithfulness
-* AI systems operating under uncertainty
-* Reproducible machine learning research
+[Paper](https://arxiv.org/abs/2608.16161) · [Source Code](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
 
 ---
 
-## GitHub
+## Find Me
 
-<p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=khajeshnarayana&show_icons=true&hide_border=true&rank_icon=github" />
-  <img height="170" src="https://github-readme-stats.vercel.app/api/top-langs/?username=khajeshnarayana&layout=compact&hide_border=true" />
-</p>
-
----
-
-## Beyond the Code
-
-I am interested in more than isolated models or benchmarks.
-
-I like understanding **systems** — how individual components interact, where assumptions break, how decisions propagate, and how complex behavior emerges from relatively simple mechanisms.
-
-That curiosity extends across artificial intelligence, research, engineering, strategy, and optimization.
+[GitHub](https://github.com/khajeshnarayana)
+[arXiv](https://arxiv.org/abs/2608.16161)
+[Email](mailto:khajeshn@gmail.com)
 
 ---
 
 <p align="center">
-  <b>Build. Measure. Understand. Improve.</b>
-</p>
-
-<p align="center">
-  <a href="mailto:khajeshn@gmail.com">
-    <img src="https://img.shields.io/badge/Email-Contact%20Me-EA4335?style=flat-square&logo=gmail&logoColor=white" />
-  </a>
-  <a href="https://github.com/khajeshnarayana">
-    <img src="https://img.shields.io/badge/GitHub-khajeshnarayana-181717?style=flat-square&logo=github&logoColor=white" />
-  </a>
-  <a href="https://arxiv.org/abs/2608.16161">
-    <img src="https://img.shields.io/badge/arXiv-Research-b31b1b?style=flat-square&logo=arxiv" />
-  </a>
+  <b>Build what works. Measure what matters.</b>
 </p>
