@@ -1,170 +1,166 @@
 <div align="center">
 
-# SAPRAM KHAJESH NARAYANA
+SAPRAM KHAJESH NARAYANA
 
-### AI / ML Research · Information Retrieval · Intelligent Systems
+AI / ML Research · Information Retrieval · Intelligent Systems
 
-*Build the evidence. Then make the claim.*
 
-<br>
 
-[![GitHub](https://img.shields.io/badge/GITHUB-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/khajeshnarayana)
-[![arXiv](https://img.shields.io/badge/arXiv-B31B1B?style=for-the-badge\&logo=arxiv\&logoColor=white)](https://arxiv.org/abs/2608.16161)
-[![Email](https://img.shields.io/badge/CONTACT-111111?style=for-the-badge\&logo=gmail\&logoColor=white)](mailto:khajeshn@gmail.com)
+
 
 </div>
 
 <br>
 
----
+Profile
 
-## Profile
+CS undergraduate specializing in Artificial Intelligence at Manipal Institute of Technology Bengaluru.
 
-CS undergraduate specializing in **Artificial Intelligence** at Manipal.
+My work is focused on representation learning, information retrieval, entity resolution, LLM reasoning, and decision systems.
 
-Training a model is table stakes.
-
-My work starts where the benchmark ends — determining whether the model actually deserves the conclusion being drawn from it.
-
-I work across **representation learning, information retrieval, entity resolution, LLM reasoning, and decision systems**.
-
-Results are easy to present.
-
-I am more interested in whether they survive scrutiny.
+I am interested in building systems whose performance can be measured, challenged, and defended — not simply demonstrated.
 
 <br>
 
----
+Research
+
+Domain-Specific Text Embedding Models for Entity Resolution
+
+Khajesh Sapram · Srivardhani Raju · Kishore Konda
+arXiv · 2026
+
+READ PAPER →   
+VIEW CODE →
+
+<br>
+
+General-purpose embedding models are optimized for semantic similarity.
+
+Entity resolution demands something stricter: identity.
+
+Two records may appear nearly identical while referring to different entities. Two records may look substantially different while referring to the same one.
+
+The work focused on making that distinction measurable and reliable.
+
+Fine-tuned all-MiniLM-L6-v2
+
+Fine-tuned BAAI/bge-base-en-v1.5
+
+Constructed 8,130 anchor-positive-negative triplets
+
+Designed identity-preserving positive variations
+
+Engineered difficult hard negatives
+
+Enforced entity-level train / validation isolation
+
+Built preprocessing, training, validation, and evaluation pipelines
+
+Benchmarked pretrained and domain-adapted representations
+
+<br>
 
 <div align="center">
 
-### SELECTED RESEARCH
+RESEARCH OUTCOME
 
-|     **8,130**     | **15.25% → 92.70%** | **2 Models** |
-| :---------------: | :-----------------: | :----------: |
-| Training Triplets |  BGE @ 0.30 Margin  | MiniLM + BGE |
+8,130
+
+15.25% → 92.70%
+
+2 Models
+
+Training Triplets
+
+BGE @ 0.30 Margin
+
+MiniLM + BGE
 
 </div>
 
-### Domain-Specific Text Embedding Models for Entity Resolution
+<br>
 
-**Khajesh Sapram · Srivardhani Raju · Kishore Konda**
-`arXiv · 2026`
-
-[**READ PAPER →**](https://arxiv.org/abs/2608.16161)    [**VIEW CODE →**](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
+At a strict 0.30 cosine-similarity margin, BGE Base EN v1.5 improved from 15.25% to 92.70% after domain adaptation.
 
 <br>
 
-General-purpose embedding models are built to understand **similarity**.
-
-Entity resolution demands something less forgiving:
-
-**identity.**
-
-Two records can look almost identical and belong to different people.
-
-Two records can look completely different and belong to the same person.
-
-Getting that distinction wrong is not a minor error.
-
-**It is the problem.**
-
-#### What I built
-
-* Fine-tuned `all-MiniLM-L6-v2`
-* Fine-tuned `BAAI/bge-base-en-v1.5`
-* Constructed **8,130 anchor-positive-negative triplets**
-* Designed identity-preserving positive variations
-* Engineered hard negatives specifically against shortcut learning
-* Enforced entity-level train / validation isolation
-* Built preprocessing, training, validation and evaluation pipelines
-* Benchmarked pretrained against domain-adapted representations
-
-> **Result**
->
-> At a strict `0.30` cosine-similarity margin, BGE Base EN v1.5 moved from **15.25% to 92.70%**.
->
-> Not a cosmetic improvement. A materially different embedding space.
-
-<br>
-
----
-
-## Currently Building
+In Progress
 
 <table>
 <tr>
+
 <td width="50%" valign="top">
 
-### 01 — Chain-of-Thought Faithfulness
+01 — Chain-of-Thought Faithfulness
 
-**LLM Reasoning · Evaluation · Research**
+LLM Reasoning · Evaluation · Research
 
-A model explaining its reasoning and that reasoning actually causing its answer are two separate claims.
+A model explaining its reasoning and that reasoning actually driving its answer are two different claims.
 
-They are frequently treated as one.
+I am investigating that gap through black-box behavioral interventions and counterfactual evaluation.
 
-I am investigating the gap through:
+Focus
 
-* Black-box behavioral interventions
-* Counterfactual evaluation
-* Prompt perturbation
-* Faithfulness measurement
-* Post-hoc reasoning analysis
+Chain-of-Thought faithfulness
 
-**The question**
+Behavioral interventions
 
-> When a model tells us why it reached an answer, how much of that explanation should we believe?
+Counterfactual evaluation
 
-`RESEARCH IN PROGRESS`
+Post-hoc rationalization
+
+Reasoning-model evaluation
+
+Reliability of visible reasoning traces
+
+RESEARCH IN PROGRESS
 
 </td>
 
 <td width="50%" valign="top">
 
-### 02 — DeltaVision
+02 — DeltaVision
 
-**Formula One · Decision Systems · Optimization**
+Formula One · Decision Systems · Optimization
 
-Race strategy is not about finding the decision that looks correct after the race.
+An AI-driven race-strategy system built around the information available at the moment a decision has to be made.
 
-It is about finding the strongest decision justified by the information available **at that moment**.
+Race state
 
-The system models:
+Tyre compound and age
 
-* Tyre state
-* Gap dynamics
-* Recent pace
-* Pit-loss cost
-* Weather
-* SC / VSC state
-* Race-state transitions
+Driver position
 
-**The question**
+Gap dynamics
 
-> Given everything known at time *t*, what was the strongest decision available?
+Recent pace
 
-`UNDER DEVELOPMENT`
+Pit-loss estimate
+
+Safety Car / VSC state
+
+Weather and track conditions
+
+The objective is to identify the strongest strategic action available from the race state at time t.
+
+UNDER DEVELOPMENT
 
 </td>
+
 </tr>
 </table>
 
 <br>
 
----
-
-## Technical Arsenal
+Technical Stack
 
 <div align="center">
 
-### Core
 
-![Python](https://img.shields.io/badge/Python-111111?style=for-the-badge\&logo=python\&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-111111?style=for-the-badge\&logo=pytorch\&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/Hugging_Face-111111?style=for-the-badge\&logo=huggingface\&logoColor=white)
-![Git](https://img.shields.io/badge/Git-111111?style=for-the-badge\&logo=git\&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-111111?style=for-the-badge\&logo=github\&logoColor=white)
+
+
+
+
 
 </div>
 
@@ -172,72 +168,72 @@ The system models:
 
 <table>
 <tr>
+
 <td width="33%" valign="top">
 
-### Machine Learning
+Machine Learning
 
-`Deep Learning`
+Deep Learning
 
-`Transformer Fine-Tuning`
+Transformer Fine-Tuning
 
-`Representation Learning`
+Representation Learning
 
-`Metric Learning`
+Metric Learning
 
-`Triplet Learning`
+Triplet Learning
 
-`Sentence Embeddings`
+Sentence Embeddings
 
 </td>
 
 <td width="33%" valign="top">
 
-### Retrieval
+Retrieval
 
-`Dense Retrieval`
+Dense Retrieval
 
-`Semantic Search`
+Semantic Search
 
-`Entity Resolution`
+Entity Resolution
 
-`Record Linkage`
+Record Linkage
 
-`Hard Negatives`
+Hard-Negative Construction
 
-`Duplicate Detection`
+Duplicate Detection
 
 </td>
 
 <td width="33%" valign="top">
 
-### Research
+Research
 
-`Experimental Design`
+Experimental Design
 
-`Model Evaluation`
+Model Benchmarking
 
-`Benchmarking`
+Cosine-Similarity Evaluation
 
-`Entity-Level Validation`
+Entity-Level Validation
 
-`Synthetic Data`
+Synthetic Data Generation
 
-`Reproducible ML`
+Reproducible Research
 
 </td>
+
 </tr>
 </table>
 
 <br>
 
----
-
-## Areas of Interest
+Research Interests
 
 <table>
 <tr>
 <td><b>Representation Learning</b></td>
-<td>Building embedding spaces where the distinction that matters survives similarity.</td>
+<td>Building embedding spaces where meaningful distinctions survive similarity.</td>
 </tr>
 
 <tr>
@@ -247,12 +243,12 @@ The system models:
 
 <tr>
 <td><b>Reasoning Models</b></td>
-<td>Separating explanations models produce from mechanisms that actually influence their answers.</td>
+<td>Studying whether visible explanations faithfully reflect the reasoning behind model outputs.</td>
 </tr>
 
 <tr>
 <td><b>AI Evaluation</b></td>
-<td>Designing experiments capable of exposing failure instead of averaging it away.</td>
+<td>Designing experiments that expose failure rather than hide it behind aggregate performance.</td>
 </tr>
 
 <tr>
@@ -263,34 +259,30 @@ The system models:
 
 <br>
 
----
+Publication
 
-## Publication
+Domain-Specific Text Embedding Models for Entity Resolution
 
-> ### Domain-Specific Text Embedding Models for Entity Resolution
->
-> **Khajesh Sapram, Srivardhani Raju, Kishore Konda**
->
-> arXiv · August 2026
->
-> [**Paper →**](https://arxiv.org/abs/2608.16161)    [**Implementation →**](https://github.com/khajeshnarayana/Domain-Specific-Text-Embedding-Models-for-Information-Retrieval)
+Khajesh Sapram, Srivardhani Raju, Kishore Konda
+arXiv · August 2026
+
+PAPER →   
+IMPLEMENTATION →
 
 <br>
-
----
 
 <div align="center">
 
-### Sapram Khajesh Narayana
+SAPRAM KHAJESH NARAYANA
 
-**Artificial Intelligence · Research · Systems**
+Artificial Intelligence · Research · Systems
 
-[GitHub](https://github.com/khajeshnarayana)  · 
-[arXiv](https://arxiv.org/abs/2608.16161)  · 
-[Email](mailto:khajeshn@gmail.com)
+GitHub  · 
+arXiv  · 
+Email
 
 <br>
 
-**Build what works. Prove that it works.**
+Build what works. Prove that it works.
 
 </div>
